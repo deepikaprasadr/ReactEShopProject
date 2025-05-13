@@ -21,6 +21,8 @@ const CategoryList = () => {
 //   //to  call in the pgload ;use useeffect with a call back fn with fetchdata [] resp for maintaining lifecyc
 //   //comp has 3 states mount update unmount. useEffect single hook to call all three stages.
 
+//onclick fn for each category
+
   return (
     <div className="container">    
       <h2 className="text-center">Category List</h2>

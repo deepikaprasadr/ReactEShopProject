@@ -7,27 +7,29 @@ import Product from "./Product";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
 
+  const fetchData = async () => {
+    const response = await axios.get(
+      "https://api.escuelajs.co/api/v1/products"
+    );
+    setProducts(response.data);
+  };
 
-const fetchData = async () => {
-  const response = await axios.get("https://api.escuelajs.co/api/v1/products");
-  setProducts(response.data);
-};
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-useEffect(() => {
-  fetchData();
-}, []);
-
-return (
-  <>
-    <div className="container">
-      <h2 className="text-center">Product List</h2>
-      <div class="row">
-        {products.map((product, index) => (
-          <Product key={index} data={product} />
-        ))}
+  return (
+    <>
+      <div className="container">
+        <h2 className="text-center">Product List</h2>
+        <div class="row">
+          {products.map((product, index) => 
+          (
+            <Product key={index} data={product} />
+          ))}
+        </div>
       </div>
-    </div>
-  </>
-);
+    </>
+  );
 };
 export default ProductList;

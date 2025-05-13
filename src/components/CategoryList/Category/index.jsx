@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom';
+
 //dummy component to generate inside the list
 //receive data using the parent using props
 const Category = (props) => {
@@ -8,9 +10,9 @@ const Category = (props) => {
         <img src={image} class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{name}</h5>
-          <a href="#" class="btn btn-primary btn-block">
+          <Link to="/products" class="btn btn-primary btn-block" >
             Select
-          </a>
+          </Link>
         </div>
       </div>
     </div>
